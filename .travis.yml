@@ -7,17 +7,4 @@ before_install:
 
 script:
   - docker run seammour/docker-react npm run test -- --coverage
-
-deploy:
-    provider: elasticbeanstalk
-    region: "us-west-2"
-    app: "seammour-docker"
-    env: "SeammourDocker-env"
-    bucket_name: "elasticbeanstalk-us-east-2-203882818197"
-    bucket_path: "seammour-docker"
-    on:
-        branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key:
-        secure: $AWS_SECRET_KEY
-        
+  
